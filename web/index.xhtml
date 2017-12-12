@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Author: Behnaz Behmanesh, Jianing (Marie) Zhang (JSF and integration)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="utf-8"></meta>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <meta name="description" content=""></meta>
+        <meta name="author" content=""></meta>
+        <title>MSC Dashboard Page</title>
+        <link href="css\bootstrap.min.css" rel="stylesheet"></link>
+        <link href="css\metisMenu.min.css" rel="stylesheet"></link>
+        <link href="css\dataTables.bootstrap.css" rel="stylesheet"></link>
+        <link href="css\dataTables.responsive.css" rel="stylesheet"></link>
+        <link href="css\sb-admin-2.css" rel="stylesheet"></link>
+        <link href="css\font-awesome.min.css" rel="stylesheet"></link>
+        <link href="css\custom.css" rel="stylesheet"></link>
+    </h:head>
+    <body>
+        <div id="wrapper"></div>
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.xhtml">MSC Admin Page</a>
+                <img src="images\Logo.PNG" alt="Logo" width="50" height="50"></img>
+            </div>      
+        </nav>
+        
+        <h:form>
+            
+            <br></br>
+            <br></br>
+            <a href="login.xhtml"><font color="white"><i class="fa fa-sign-out fa-fw"></i>Logout</font></a>
+            <br></br>
+            <br></br>
+            <a href="index.xhtml"><font color="white"><i class="fa fa-dashboard fa-fw"></i>Edit Profile</font></a>
+            <br></br>
+            <br></br>
+            <a href="index.xhtml"><font color="white"><i class="fa fa-dashboard fa-fw"></i>Edit Availability</font></a>
+            <br></br>
+            <br></br>
+            <p:outputLabel for="inputId" value="Employee ID:&nbsp;" />
+            <p:inputText id="inputId" value="#{scheduleController.employeeId}" />
+            <h:outputText value="&nbsp;&nbsp;&nbsp;" />
+            <h:commandButton action="#{scheduleController.getEmployeePage}" value="My Schedule"/>
+            <br></br>
+            <br></br>
+            <p:outputLabel for="selectWeek" value="Select week to schedule:&nbsp;" />
+            <p:calendar id="selectWeek" value="#{scheduleController.selectDate}" />
+            <h:outputText value="&nbsp;&nbsp;&nbsp;" />
+            <h:commandButton action="#{scheduleController.getSchedulePage}" value="Schedule"/>
+            <br></br>
+            <br></br>
+            <h:commandButton action="#{scheduleController.getSchedulePage}" value="Change Schedule"/>
+            <br></br>
+            <br></br>
+            <h:commandButton action="#{scheduleController.getSupervisorPage}" value="All Schedule"/>
+            <br></br>
+            <br></br>
+            <h:commandButton action="#{LocationController.getLocationPage}" value="Add Location"/>
+            
+        </h:form>
+
+    </body>
+</html>

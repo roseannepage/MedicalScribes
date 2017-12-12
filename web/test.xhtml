@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Dashboard</title>
+    </h:head>
+    <h:body>
+        <f:view>
+        <h:form>
+            <br></br>
+            <br></br>
+            <a href="login.xhtml"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+            <br></br>
+            <br></br>
+            <a href="schedule.xhtml"><i class="fa fa-dashboard fa-fw"></i>Edit Profile</a>
+            <br></br>
+            <br></br>
+            <a href="schedule.xhtml"><i class="fa fa-dashboard fa-fw"></i>Edit Availability</a>
+            <br></br>
+            <br></br>
+            <p:outputLabel for="inputId" value="Employee ID: " />
+            <p:inputText id="inputId" value="#{scheduleController.employeeId}" />
+            <h:commandButton action="#{scheduleController.getEmployeePage}" value="My Schedule"/>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <p:outputLabel for="selectWeek" value="Select week to schedule: " />
+            <p:calendar id="selectWeek" value="#{scheduleController.selectDate}" />
+            <h:commandButton action="#{scheduleController.getSchedulePage}" value="Schedule"/>
+            <br></br>
+            <br></br>
+            <h:commandButton action="#{scheduleController.getSchedulePage}" value="Change Schedule"/>
+            <br></br>
+            <br></br>
+            <h:commandButton action="#{scheduleController.getSupervisorPage}" value="All Schedule"/>
+            <br></br>
+            <br></br>
+            <h:commandButton action="#{LocationController.getLocationPage}" value="Add Location"/>
+            <br></br>
+            <br></br>
+            <h:commandButton action="#{scheduleController.schedule}" value="Test"/>
+            
+        </h:form>
+        </f:view>
+    </h:body>
+</html>
