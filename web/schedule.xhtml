@@ -6,6 +6,7 @@
    -->
 <!--
 Author: Natalia Gurevich, Jianing (Marie) Zhang (use PrimeFaces library and integration)
+comments by Roseanne Page
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -13,6 +14,9 @@ Author: Natalia Gurevich, Jianing (Marie) Zhang (use PrimeFaces library and inte
    xmlns:p="http://primefaces.org/ui"
    >
    <h:head>
+       <!-- 
+       Links to Css
+        -->
         <title>MSC Schedule Page</title>
         <link href="css\bootstrap.min.css" rel="stylesheet"></link>
         <link href="css\metisMenu.min.css" rel="stylesheet"></link>
@@ -45,6 +49,9 @@ Author: Natalia Gurevich, Jianing (Marie) Zhang (use PrimeFaces library and inte
             </div>
         </div>
         </nav> 
+        <!-- 
+        Links to other pages
+        -->
       <a class="navbar-brand" href="index.xhtml">Dashboard</a>
                <br></br>
       <a href="login.xhtml"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -53,6 +60,9 @@ Author: Natalia Gurevich, Jianing (Marie) Zhang (use PrimeFaces library and inte
          <p:growl id="messages" showDetail="true" />
          <h:panelGrid columnClasses="value">
              <h3 style="margin-top: 0">Schedule</h3>
+            <!-- 
+            Schedule scripts
+            -->
             <p:schedule id="schedule" value="#{scheduleController.eventModel}" widgetVar="myschedule" timeZone="GMT-5">
                <p:ajax event="dateSelect" listener="#{scheduleController.onDateSelect}" update="eventDetails" oncomplete="PF('eventDialog').show();" />
                <p:ajax event="eventSelect" listener="#{scheduleController.onEventSelect}" update="eventDetails" oncomplete="PF('eventDialog').show();" />

@@ -7,6 +7,7 @@
    
 <!--
 Author: Behnaz Behmanesh, Jianing (Marie) Zhang (JSF and integration)
+comments by Roseanne Page
 -->
 <html xmlns="http://www.w3.org/1999/xhtml"
    xmlns:f="http://java.sun.com/jsf/core"
@@ -14,6 +15,9 @@ Author: Behnaz Behmanesh, Jianing (Marie) Zhang (JSF and integration)
    xmlns:p="http://primefaces.org/ui"
    >
    <h:head>
+       <!-- 
+       Linking to the Css
+        -->
       <meta charset="utf-8"/>
       <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -71,6 +75,9 @@ Author: Behnaz Behmanesh, Jianing (Marie) Zhang (JSF and integration)
                            <div class="col-lg-6">
                               <h:form role="form">
                                  <div class="form-group">
+                                     <!-- 
+                                     Dropdowns to add a location
+                                    -->
                                     <label>Province</label>
                                     <br></br>
                                     <p:selectOneMenu value="#{LocationController.newLocation.province}" editable="true">                                    
